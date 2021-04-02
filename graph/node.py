@@ -57,11 +57,14 @@ class Node:
 				found = True
 		return neighbor_node
 
-	def if_exist_neighbor(this,neighbor_name):
+	def is_exist_neighbor(this,neighbor_name):
 		for it in this.neighbor:
 			if (it.name == neighbor_name):
 				return True
 		return False
+
+	def is_null(this):
+		return this.name == "NULL"
 
 	def print_all(this):
 		this.check_null_node()
