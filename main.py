@@ -59,6 +59,9 @@ graf.add_edge("B","A")
 
 #my_node = graf.get_node("A").get_neighbor("C")
 
+graf.del_edge("A","B")
+graf.del_edge("E","B")
+
 graf.print_all()
 
 #my_node.print_all()

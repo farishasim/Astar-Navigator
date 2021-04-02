@@ -26,6 +26,9 @@ class Node:
 				return it
 		return Node("NULL")
 
+	def get_all_neighbor(this):
+		return this.neighbor
+
 	def get_neighbor_num(this):
 		this.check_null_node()
 		return len(this.neighbor)
