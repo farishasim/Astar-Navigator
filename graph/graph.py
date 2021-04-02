@@ -18,7 +18,7 @@ class Graph:
 		idx = this.get_node_idx(node_name)
 		if (idx != -1):
 			return this.nodes[idx]
-		return Node("NULL")
+		return node.Node("NULL")
 
 	def is_exist_edge(this,node1_name,node2_name):
 		first = this.get_node(node1_name).is_exist_neighbor(node2_name)
