@@ -12,5 +12,10 @@ class Map(Graph):
 		cur = queue.dequeue() #bentuknya list node
 		while(cur[len(cur)-1].get_name() != target.get_name()):
 			neighbor = cur[len(cur)-1].get_all_neighbor()
+			new_track = cur
 			for it in neighbor:
-				queue.enqueue(it,target)
+				new_track.append(it)
+				queue.enqueue(new_track,target)
+				new_track = cur
+			cur = queue.dequeue()
+		return cur
