@@ -80,7 +80,8 @@ class Graph:
 					record.append(neighbor_name)
 					node1_name = neighbor_name
 					found = True
-				i += 1
+				else:
+					i += 1
 			if (node1_name == node2_name):
 				return True
 			if (i == len(list_neighbor)):
