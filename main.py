@@ -41,11 +41,15 @@ import mapLoader as ml
 # peta.add_many_edge("H",tetangga_h)
 
 peta = ml.MapLoader().load("test/testfile.txt")
-
+loc1 = loc.Location("Z",20,3)
+peta.add_node(loc1)
 # peta.print_all()
 
 # result = peta.a_star_path(a,h)
-result = peta.a_star_path(peta.get_node("A"),peta.get_node("H"))
-print(result)
-for i in result:
-    print(i.get_name())
+result = peta.a_star_path(peta.get_node("A"),peta.get_node("Z"))
+# print(result)
+if (len(result) != 0):
+    for i in result:
+        print(i.get_name())
+else:
+    print("not connected")

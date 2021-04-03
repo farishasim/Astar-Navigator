@@ -60,6 +60,37 @@ class Graph:
 			return value
 		return node.Node("NULL")
 
+	def dfs_search(this,node1_name,node2_name):
+		node1_idx = this.get_node_idx(node1_name)
+		if (node1_idx == -1 or this.get_node_idx(node2_name) == -1):
+			return False
+		visited = [0 for i in range(len(this.nodes))]
+		visited[node1_idx] = 1
+		record = [node1_name]
+		while(node1_name != node2_name):
+			node1 = this.get_node(node1_name)
+			list_neighbor = node1.get_all_neighbor()
+			found = False
+			i = 0
+			while(i < len(list_neighbor) and not found):
+				neighbor_name = list_neighbor[i].get_name()
+				neighbor_idx = this.get_node_idx(neighbor_name)
+				if (visited[neighbor_idx] == 0):
+					visited[neighbor_idx] = 1
+					record.append(neighbor_name)
+					node1_name = neighbor_name
+					found = True
+				i += 1
+			if (node1_name == node2_name):
+				return True
+			if (i == len(list_neighbor)):
+				length = len(record)
+				if (length == 1):
+					return False
+				else:
+					record.pop(length-1)
+					node1_name = record[length-2]
+
 
 	def print_all(this):
 		for it in this.nodes:
