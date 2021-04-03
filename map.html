@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css" type="text/css">
+    <style>
+      .map {
+        height: 800px;
+        width: 100%;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+    <title>OpenLayers example</title>
+  </head>
+  <body>
+    <h2>My Map</h2>
+    <div id="map" class="map"></div>
+    <script type="text/javascript">
+      const osm = new ol.source.OSM();
+
+      const localmap = new ol.Map({
+              layers: [
+                  new ol.layer.Tile({
+                      source: osm
+                  })
+              ],
+              target: 'map',
+              view: new ol.View({
+                  center: [0, 0],
+                  zoom: 2
+              })
+      });
+
+      localmap.on('singleclick', function (evt) {
+          console.log(evt.coordinate);
+
+          // convert coordinate to EPSG-4326
+          console.log(ol.proj.transform(evt.coordinate, 'EPSG:3857', 'EPSG:4326'));
+      });
+    </script>
+  </body>
+</html>
