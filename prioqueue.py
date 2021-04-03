@@ -6,7 +6,7 @@ class ElementQueueMap:
 		length = len(this.track)
 		if (length > 0):
 			i = 0
-			while(i+1 < length)
+			while(i+1 < length):
 				temp_dist = this.track[i].distance(this.track[i+1])
 				this.prio += temp_dist
 				i += 1

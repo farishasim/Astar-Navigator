@@ -1,7 +1,9 @@
 import location as loc
 import prioqueue as pq
+from graph import graph
+from graph import node
 
-class Map(Graph):
+class Map(graph.Graph):
 
 	def __init__(this):
 		super().__init__()
