@@ -12,21 +12,22 @@ class ElementQueueMap:
 				i += 1
 			this.prio += this.track[length-1].distance(target)
 
-	def prio(this):
-		return this.prio
+	# def prio(this):
+	# 	return this.prio
 
-	def track(this):
-		return this.track
+	# def track(this):
+	# 	return this.track
 
 class PrioQueueMap:
 	def __init__(this):
 		this.queue = []
+		this.flag = True
 
 	def sort_queue(this):
 		length = len(this.queue)
 		for i in range(length):
 			for j in range(i+1,length):
-				if (this.queue[j].prio() < this.queue[i].prio()):
+				if (this.queue[j].prio < this.queue[i].prio):
 					temp = this.queue[i]
 					this.queue[i] = this.queue[j]
 					this.queue[j] = temp
@@ -39,6 +40,7 @@ class PrioQueueMap:
 		if (len(this.queue) > 0):
 			result = this.queue.pop(0)
 			return result
+		this.flag = False
 		return None
 
 	def get_size(this):

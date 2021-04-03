@@ -35,6 +35,10 @@ class Graph:
 				return True
 		return False
 
+	def add_many_edge(this,node_name,list_node_name):
+		for i in list_node_name:
+			this.add_edge(node_name,i)
+
 	def del_edge(this,node1_name,node2_name):
 		node1_idx = this.get_node_idx(node1_name)
 		node2_idx = this.get_node_idx(node2_name)

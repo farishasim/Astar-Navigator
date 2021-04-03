@@ -11,13 +11,18 @@ class Map(graph.Graph):
 	def a_star_path(this,origin,target):
 		queue = pq.PrioQueueMap()
 		initial_element = pq.ElementQueueMap([origin],target)
-		cur = queue.dequeue() #bentuknya list node
-		while(cur[len(cur)-1].get_name() != target.get_name()):
+		queue.enqueue(initial_element)
+		cur = queue.dequeue().track #bentuknya list node
+		while(cur[len(cur)-1].get_name() != target.get_name() and queue.flag):
 			neighbor = cur[len(cur)-1].get_all_neighbor()
-			new_track = cur
+			new_track = cur[:]
+			i = 0
 			for it in neighbor:
 				new_track.append(it)
-				queue.enqueue(new_track,target)
-				new_track = cur
-			cur = queue.dequeue()
+				new_elqueue = pq.ElementQueueMap(new_track,target)
+				queue.enqueue(new_elqueue)
+				new_track = cur[:]
+			cur = queue.dequeue().track
+		if (not(queue.flag)):
+			return None
 		return cur
