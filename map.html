@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
    crossorigin=""/>
+   <link rel="stylesheet" href="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.css" />
     <style>
       .map {
         height: 800px;
@@ -16,11 +17,10 @@
     <title>OpenLayers example</title>
   </head>
   <body>
-    <h2>My Map</h2>
+    <div id="lat"></div>
     <div id="map" class="map"></div>
     <script type="text/javascript">
-      var mymap = L.map('map').setView([51.505, -0.09], 13);
-
+      var mymap = L.map('map' , {drawControl: true}).setView([-6.890707, 467.610211], 19);
       L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
             maxZoom: 18,
@@ -30,14 +30,21 @@
             accessToken: 'pk.eyJ1IjoiZmFyaXNoYXNpbSIsImEiOiJja24xcDc3ZW4wOXN4Mm50ZXBtZGt0dWRxIn0.HXFZIocuttAMAG7jhvRAHA'
         }).addTo(mymap);
 
+      // var drawnItems = new L.FeatureGroup();
+      // map.addLayer(drawnItems);
+      // var drawControl = new L.Control.Draw({
+      //     edit: {
+      //         featureGroup: drawnItems
+      //     }
+      // });
+      // map.addControl(drawControl);
+
       function onMapClick(e) {
         document.getElementById("lat").innerHTML = e.latlng;
       }
 
       mymap.on('click', onMapClick);
     </script>
-
-    <h2>Value</h2>
-    <div id="lat"></div>
+    <script src="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.min.js"></script>
   </body>
 </html>
