@@ -16,10 +16,11 @@ node2 = input()
 # result = peta.a_star_path(a,h)
 result = peta.a_star_path2(peta.get_node(node1),peta.get_node(node2))
 # print(result)
-if (len(result) != 0):
-    for i in result:
+if (len(result[0]) != 0):
+    for i in result[0]:
         print(i.get_name())
-    mv.MapVisualizer().visualize(peta, result)
+    print("%.2f" % result[1])
+    mv.MapVisualizer().visualize(peta, result[0])
     url = 'file:///' + os.getcwd() + '/' + 'testscmap.html'
     webbrowser.open(url) 
     
