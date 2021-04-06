@@ -2,7 +2,7 @@ import map
 import folium
 
 class MapVisualizer:
-    def visualize(self, mapSolved, path):
+    def visualize(self, mapSolved, path, distance):
         self.visualMap = folium.Map(location=[mapSolved.nodes[0].coordinate.x, 
                                         mapSolved.nodes[0].coordinate.y], 
                                 zoom_start=17)
@@ -11,10 +11,12 @@ class MapVisualizer:
         self.visualizeMap(mapSolved)
 
         # create marker for each node in path
-        self.visualizePath(path)
+        self.visualizePath(path, distance)
 
         print("You can see the result in : " + "testscmap.html")
         self.visualMap.save('testscmap.html')
+
+
     
     def visualizeMap(self, mapSolved):
         for node in mapSolved.nodes:
@@ -30,12 +32,13 @@ class MapVisualizer:
                                     [node2.coordinate.x, node2.coordinate.y]],
                                     color='blue').add_to(self.visualMap)
 
-    def visualizePath(self, path):
+    def visualizePath(self, path, distance):
         countNodes = len(path)
+        points = []
         for i in range(countNodes):
-            if i != countNodes-1:
-                node1 = path[i]
-                node2 = path[i+1]
-                folium.PolyLine([[node1.coordinate.x, node1.coordinate.y],
-                                [node2.coordinate.x, node2.coordinate.y]],
-                                color='red').add_to(self.visualMap)
+            node = path[i]
+            points.append([node.coordinate.x, node.coordinate.y])
+        
+        folium.PolyLine(points,
+                        color='red',
+                        tooltip=("%.2f" % distance + " metres")).add_to(self.visualMap)
