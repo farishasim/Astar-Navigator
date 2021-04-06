@@ -41,4 +41,5 @@ class MapVisualizer:
         
         folium.PolyLine(points,
                         color='red',
+                        popup='<strong>'+"%.2f" % distance + " metres"+'</strong>',
                         tooltip=("%.2f" % distance + " metres")).add_to(self.visualMap)
