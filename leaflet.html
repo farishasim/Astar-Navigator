@@ -28,13 +28,13 @@
 			var editableLayers = new L.FeatureGroup();
 			map.addLayer(editableLayers);
 			map.on('pm:create', function(e) {
-  			var coords = e.layer.getLatLngs(); //ini dapetnya array, bisanya untuk polygon dan polyline
-  			console.log(coords);
+  			if (e.shape == "Line") {
+				var coords = e.layer.getLatLngs(); //ini dapetnya array, bisanya untuk polygon dan polyline
+			} else {
+				var coords = e.layer.getLatLng();
+			}
+			console.log(coords);
 			});
-			// map.on('pm:create', function(e) {
-  	// 		var coord = e.layer.getLatLng(); //ini dapetnya satuan, untuk marker
-  	// 		console.log(coord);
-			// });
 		</script>
 	</div>
 
