@@ -3,11 +3,14 @@ import prioqueue as pq
 from graph import graph
 from graph import node
 
+#derived class of Graph
 class Map(graph.Graph):
 
+	#ctor
 	def __init__(this):
 		super().__init__()
 
+	#algoritma a star alternatif 1dengan dfs untuk cari keterhubungan dulu
 	def a_star_path(this,origin,target):
 		if (origin.is_null() or target.is_null()):
 			return ([],-1)
@@ -35,9 +38,8 @@ class Map(graph.Graph):
 			return (cur,distance)
 		return ([],-1)
 
-	# alternatif lain tanpa dfs
+	# alternatif 2 tanpa dfs
 	def a_star_path2(this,origin,target):
-		# if (this.dfs_search(origin.get_name(),target.get_name())):
 		if (origin.is_null() or target.is_null()):
 			return ([],-1)
 		visited_dict = {}
@@ -64,4 +66,3 @@ class Map(graph.Graph):
 		if (len(queue.queue) == 0):
 			return ([],-1)
 		return (cur,distance)
-		# return []

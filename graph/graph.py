@@ -1,30 +1,36 @@
 from graph import node
 
 class Graph:
+	#ctor
 	def __init__(this):
 		this.nodes = []
 
+	#menambah node
 	def add_node(this,node): ##typenya Node atau subclassnya aja
 		this.nodes.append(node)
 		return
 
+	#mendapatkan indeks tertentu sebuah node dengan param nama
 	def get_node_idx(this,node_name):
 		for i in range(len(this.nodes)):
 			if (this.nodes[i].get_name() == node_name):
 				return i
 		return -1
 
+	#mendapatkan return value dengan tipe kelas Node menggunakan param nama
 	def get_node(this,node_name):
 		idx = this.get_node_idx(node_name)
 		if (idx != -1):
 			return this.nodes[idx]
 		return node.Node("NULL")
 
+	#mengcek apakah dua node dengan nama tertentu bersisian
 	def is_exist_edge(this,node1_name,node2_name):
 		first = this.get_node(node1_name).is_exist_neighbor(node2_name)
 		second = this.get_node(node2_name).is_exist_neighbor(node1_name)
 		return first or second
 
+	#menambah sisi
 	def add_edge(this,node1_name,node2_name):
 		node1_idx = this.get_node_idx(node1_name)
 		node2_idx = this.get_node_idx(node2_name)
@@ -35,10 +41,12 @@ class Graph:
 				return True
 		return False
 
+	#menambah sisi banyak sekaligus
 	def add_many_edge(this,node_name,list_node_name):
 		for i in list_node_name:
 			this.add_edge(node_name,i)
 
+	#menghilangkan sebuah sisi
 	def del_edge(this,node1_name,node2_name):
 		node1_idx = this.get_node_idx(node1_name)
 		node2_idx = this.get_node_idx(node2_name)
@@ -49,7 +57,7 @@ class Graph:
 				return True
 		return False
 
-
+	#menghilangkan sebuah node
 	def del_node(this,node_name):
 		for i in range(len(this.nodes)):
 			this.nodes[i].del_neighbor(node_name)
@@ -60,6 +68,7 @@ class Graph:
 			return value
 		return node.Node("NULL")
 
+	#untuk mencari keterhubungan dua buah node
 	def dfs_search(this,node1_name,node2_name):
 		node1_idx = this.get_node_idx(node1_name)
 		if (node1_idx == -1 or this.get_node_idx(node2_name) == -1):
@@ -92,7 +101,7 @@ class Graph:
 					record.pop(length-1)
 					node1_name = record[length-2]
 
-
+	#untuk debugging
 	def print_all(this):
 		for it in this.nodes:
 			it.print_all()

@@ -1,4 +1,5 @@
 class ElementQueueMap:
+	#ctor
 	def __init__(this,track,target):
 		this.track = track
 		this.prio = 0
@@ -12,17 +13,13 @@ class ElementQueueMap:
 				i += 1
 			this.prio += this.track[length-1].distance(target)
 
-	# def prio(this):
-	# 	return this.prio
-
-	# def track(this):
-	# 	return this.track
-
 class PrioQueueMap:
+	#ctor
 	def __init__(this):
 		this.queue = []
 		this.flag = True
 
+	#sort queue
 	def sort_queue(this):
 		length = len(this.queue)
 		for i in range(length):
@@ -31,17 +28,17 @@ class PrioQueueMap:
 					temp = this.queue[i]
 					this.queue[i] = this.queue[j]
 					this.queue[j] = temp
-
+	#nambah element queue
 	def enqueue(this,element):
 		this.queue.append(element)
 		this.sort_queue()
-
+	#mengeluarkan element queue
 	def dequeue(this):
 		if (len(this.queue) > 0):
 			result = this.queue.pop(0)
 			return result
 		this.flag = False
 		return None
-
+	#mendapatkan panjang queue
 	def get_size(this):
 		return len(this.queue)

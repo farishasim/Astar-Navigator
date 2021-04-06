@@ -1,11 +1,13 @@
 import math
 
 class Coordinate2D:
+	#ctor
 	def __init__(this,x,y):
 		this.x = x
 		this.y = y
 
-	def euclidean_distance(this,another_point):
+	#mendapatkan jarak dengan formula haversine
+	def haversine_distance(this,another_point):
 		lat1 = math.radians(this.x)
 		lat2 = math.radians(another_point.x)
 		lon1 = math.radians(this.y)
