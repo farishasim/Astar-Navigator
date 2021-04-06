@@ -6,10 +6,17 @@ import mapVisualizer as mv
 import os
 import webbrowser
 
-peta = ml.MapLoader().load("test/testITB2.txt")
+filename = input("Masukkan nama file txt : ")
 
-node1 = input()
-node2 = input()
+peta = ml.MapLoader().load("../test/" + filename)
+
+print("Simpul-simpul yang tersedia : ")
+for node in peta.nodes:
+    print(node.get_name(), end=" ")
+print()
+
+node1 = input("Masukkan simpul awal : ")
+node2 = input("Masukkan simpul tujuan : ")
 
 result = peta.a_star_path2(peta.get_node(node1),peta.get_node(node2))
 
