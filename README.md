@@ -54,7 +54,7 @@ K -8.096888883761814 112.1628645645551\
 0 0 0 0 0 0 1 0 1 0 0\
 0 0 0 0 0 1 0 1 0 1 0\
 0 0 0 0 0 0 0 0 1 0 1\
-0 0 0 1 0 0 0 0 0 1 0\
+0 0 0 1 0 0 0 0 0 1 0
 
 Setelah itu simpan file txt pada folder test agar bisa digunakan sebagai input program.
 ## Memulai Program
