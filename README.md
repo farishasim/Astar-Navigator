@@ -61,9 +61,11 @@ Setelah itu simpan file txt pada folder test agar bisa digunakan sebagai input p
 Untuk memulai program, ubah current directory ke folder src yang ada, kemudian ketik command line berikut di terminal masing-masing.
 
 Pada Windows:
+
 `python main.py`
 
 Pada Ubuntu:
+
 `python3 main.py`
 
 Setelah itu, program akan meminta input nama file txt yang telah disiapkan. Ketik nama file txt dengan format "nama_file.txt".
