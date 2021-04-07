@@ -91,4 +91,4 @@ Untuk melihat jarak tempuhnya, dekatkan cursor anda ke rute garis, maka akan mun
 
 ![Hover Cursor](./img/output4.png)
 
-{Author : Randy Zakya Suchrady (13519061), Faris Hasim Syauqi(13519050)}
+*Author : Randy Zakya Suchrady (13519061), Faris Hasim Syauqi(13519050)*
