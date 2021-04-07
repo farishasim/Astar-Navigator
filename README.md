@@ -21,7 +21,9 @@ Berikut detail untuk mempersiapkan dependencies.
 Untuk Windows bisa segera ke link https://www.python.org/downloads/ dan mengikuti guide yang berlaku di link tersebut.
 
 Untuk Ubuntu bisa menggunakan command line berikut pada terminal:
+
 `sudo apt update`
+
 `sudo apt install python3-pip`
 
 ### Folium
