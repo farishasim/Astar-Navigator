@@ -90,3 +90,5 @@ Setelah output dari terminal keluar, program juga akan membuka default browser a
 Untuk melihat jarak tempuhnya, dekatkan cursor anda ke rute garis, maka akan muncul jarak yang harus ditempuh.
 
 ![Hover Cursor](./img/output4.png)
+
+`Author : Randy Zakya Suchrady (13519061), Faris Hasim Syauqi(13519050)`
