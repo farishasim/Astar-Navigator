@@ -1,7 +1,7 @@
 # Tugas Kecil Stima 3
 > Pengaplikasian Algoritma A* untuk Mencari Lintasan Terpendek
 
-##Daftar Isi
+## Daftar Isi
 * [Dependencies](#dependencies)
 * [Mempersiapkan Dependencies](#mempersiapkan-dependencies)
 * [Mempersipkan Input Program](#mempersiapkan-input-program)
@@ -32,7 +32,7 @@ Ketika PIP sudah terpasang pada mesin anda, silahkan ketik command berikut pada 
 ## Mempersiapkan Input Program
 Siapkan file txt yang menyatakan banyaknya lokasi sebesar N, nama lokasi beserta garis lintang dan garis bujurnya sebanyak N, serta matriks ketetanggaan dengan ukuran NxN. Berikut adalah contoh dari isi file txt.
 
-`11
+11
 A -8.099045120315456 112.16493522999168
 B -8.100840204992812 112.16458117838853
 C -8.100340981063543 112.16244613993318
@@ -55,7 +55,7 @@ K -8.096888883761814 112.1628645645551
 0 0 0 0 0 1 0 1 0 1 0
 0 0 0 0 0 0 0 0 1 0 1
 0 0 0 1 0 0 0 0 0 1 0
-`
+
 Setelah itu simpan file txt pada folder test agar bisa digunakan sebagai input program.
 ## Memulai Program
 Untuk memulai program, ubah current directory ke folder src yang ada, kemudian ketik command line berikut di terminal masing-masing.
